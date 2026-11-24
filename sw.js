@@ -1,0 +1,1 @@
+self.addEventListener('install',e=>e.waitUntil(caches.open('slipp-v1').then(c=>c.addAll(['./','./index.html','./icon.png','./manifest.json']))));self.addEventListener('fetch',e=>{if(new URL(e.request.url).origin===self.location.origin)e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))});
